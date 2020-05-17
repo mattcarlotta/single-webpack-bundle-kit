@@ -1,10 +1,10 @@
 import React from "react";
-import Logo from "~images/logo_192.png";
+import Logo from "~images/logo.svg";
 import { container, description, logo, title } from "./Card.module.scss";
 
 const Card = () => (
   <div className={container}>
-    <img className={logo} src={Logo} alt="Logo.png" />
+    <img className={logo} src={Logo} alt="logo.svg" />
     <h1 className={title}>Card</h1>
     <p className={description}>
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
