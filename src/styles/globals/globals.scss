@@ -31,11 +31,34 @@
     files.
 */
 
-@import '~react-toastify/dist/ReactToastify.css';
-
 @font-face {
-  font-family: 'Poppins Light';
+  font-family: "Poppins Light";
   font-style: normal;
   font-weight: normal;
-  src: url('../assets/fonts/Poppins-Light.ttf') format('truetype');
+  src: url("../assets/fonts/Poppins-Light.ttf") format("truetype");
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins Light", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: #ebebeb;
+}
+::-moz-focus-inner {
+  border: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }

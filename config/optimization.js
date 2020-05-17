@@ -55,20 +55,7 @@ const optimization = {
     new OptimizeCSSAssetsPlugin(cssProcessorOptions),
   ],
   /* keep run time chunk to a single chunk */
-  runtimeChunk: "single",
-  /* split all chunks if possible */
-  splitChunks: {
-    chunks: "all",
-    maxInitialRequests: Infinity,
-    minSize: 0,
-    //   /* group chunks by vendor to reduce large chunking */
-    //   cacheGroups: {
-    //     vendors: {
-    //       test: /[\\/]node_modules[\\/]/,
-    //       filename: 'bundle.js',
-    //     },
-    //   },
-  },
+  runtimeChunk: false,
 };
 
 module.exports = optimization;

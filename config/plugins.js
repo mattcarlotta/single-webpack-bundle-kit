@@ -1,22 +1,19 @@
-const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+const { DefinePlugin, HotModuleReplacementPlugin } = require("webpack");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
-const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const WebpackBar = require('webpackbar');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const WebpackBar = require("webpackbar");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const {
   analyzePath,
   cssFolder,
   faviconPath,
-  publicPath,
   templatePath,
-} = require('./paths');
-const { ANALYZE, APIPORT, inDevelopment, NODE_ENV, PORT } = require('./envs');
+} = require("./paths");
+const { ANALYZE, inDevelopment, NODE_ENV, PORT } = require("./envs");
 
 // =============================================================== //
 // WEBPACK PLUGINS                                                 //
@@ -38,7 +35,7 @@ notes.push(
 const plugins = [
   /* shows a compilation bar instead of the default compile message */
   new WebpackBar({
-    color: '#268bd2',
+    color: "#268bd2",
     minimal: false,
     compiledIn: false,
   }),
@@ -59,25 +56,9 @@ const plugins = [
   }),
   /* webpack ENV files */
   new DefinePlugin({
-    'process.env': {
-      APIPORT: JSON.stringify(APIPORT),
+    "process.env": {
       NODE_ENV: JSON.stringify(NODE_ENV),
       PORT: JSON.stringify(PORT),
-    },
-  }),
-  /* generates a manifest for all assets */
-  new ManifestPlugin({
-    fileName: 'asset-manifest.json',
-    publicPath,
-    generate: (seed, files) => {
-      const manifestFiles = files.reduce(function (manifest, file) {
-        manifest[file.name] = file.path;
-        return manifest;
-      }, seed);
-
-      return {
-        files: manifestFiles,
-      };
     },
   }),
 ];
@@ -93,26 +74,23 @@ if (inDevelopment) {
 } else {
   /* production webpack plugins */
   plugins.push(
-    /* compiles SCSS to a single CSS file */
-    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime/]),
     /* extracts CSS to dist folder */
     new MiniCssExtractPlugin({
-      filename: `${cssFolder}/[name].[contenthash:8].css`,
-      chunkFilename: `${cssFolder}/[id].[contenthash:8].css`,
+      filename: cssFolder,
     }),
     /* copies some files from public to dist on build */
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public/robots.txt' },
-        { from: 'public/manifest.json' },
-        { from: 'public/logo_512.png' },
-        { from: 'public/logo_192.png' },
+        { from: "public/robots.txt" },
+        { from: "public/manifest.json" },
+        { from: "public/logo_512.png" },
+        { from: "public/logo_192.png" },
       ],
     }),
     /* runs bundle analyzer if in staging */
     ANALYZE &&
       new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
+        analyzerMode: "static",
         reportFilename: analyzePath,
       }),
   );
