@@ -87,7 +87,7 @@ if (inDevelopment) {
         { from: "public/logo_192.png" },
       ],
     }),
-    /* runs bundle analyzer if in staging */
+    /* runs bundle "yarn analyze" script is run */
     ANALYZE &&
       new BundleAnalyzerPlugin({
         analyzerMode: "static",
