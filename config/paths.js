@@ -23,7 +23,7 @@ module.exports = {
   /* compiled fonts build path (build/assets) */
   fontsFolder: "static/assets",
   /* compiled CSS build path (build/css) */
-  cssFolder: "static/css/main-min.css",
+  cssFolder: "static/css/main.min.css",
   /* compiled JS build path (build/js) */
   jsFolder: "static/js/bundle-min.js",
 };
