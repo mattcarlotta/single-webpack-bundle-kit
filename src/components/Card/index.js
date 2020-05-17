@@ -1,8 +1,10 @@
 import React from "react";
-import { container, description, title } from "./Card.module.scss";
+import Logo from "~images/logo_192.png";
+import { container, description, logo, title } from "./Card.module.scss";
 
 const Card = () => (
   <div className={container}>
+    <img className={logo} src={Logo} alt="Logo.png" />
     <h1 className={title}>Card</h1>
     <p className={description}>
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy

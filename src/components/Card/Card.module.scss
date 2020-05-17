@@ -1,15 +1,23 @@
 @import "../../styles/variables/vars";
+@import "../../styles/animations/anim";
 
 .container {
   width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
+  padding: 10px;
 }
 
 .description {
   text-align: left;
 }
 
+.logo {
+  @include anim(flipIn infinite 2s linear);
+  width: 60px;
+}
+
 .title {
   color: $blue;
+  font-size: 50px;
 }

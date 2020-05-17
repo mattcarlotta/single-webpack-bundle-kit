@@ -75,7 +75,7 @@ const rules = [
   }),
   /* handle font assets */
   mediaRule({
-    test: /\.(woff2|ttf|woff|eot|svg)$/,
+    test: /\.(woff2|ttf|woff|eot|svg|png|jpg|jpeg)$/,
     outputPath: fontsFolder,
   }),
   /* handle css */
