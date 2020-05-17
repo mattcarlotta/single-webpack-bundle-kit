@@ -54,7 +54,7 @@ const optimization = {
     /* compile and optimize SCSS to CSS */
     new OptimizeCSSAssetsPlugin(cssProcessorOptions),
   ],
-  /* keep run time chunk to a single chunk */
+  /* remove run time chunk */
   runtimeChunk: false,
 };
 
