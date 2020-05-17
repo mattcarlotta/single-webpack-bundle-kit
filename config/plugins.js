@@ -54,7 +54,7 @@ const plugins = [
     },
     clearConsole: true,
   }),
-  /* webpack ENV files */
+  /* ENVs that'll be defined in the process during build and development run time */
   new DefinePlugin({
     "process.env": {
       NODE_ENV: JSON.stringify(NODE_ENV),
@@ -87,7 +87,7 @@ if (inDevelopment) {
         { from: "public/logo_192.png" },
       ],
     }),
-    /* runs bundle "yarn analyze" script is run */
+    /* displays a chunk distribution chart */
     ANALYZE &&
       new BundleAnalyzerPlugin({
         analyzerMode: "static",

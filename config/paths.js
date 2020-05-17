@@ -14,16 +14,16 @@ module.exports = {
   publicFolder: resolve(`${currentDirectory}/public`),
   /* entry point to the application index (./src/index.js) */
   entryPath: resolve(`${currentDirectory}/src/index.js`),
-  /* path to index.html (build/index.html) */
+  /* path to index.html (dist/index.html) */
   templatePath: resolve(`${currentDirectory}/public/index.html`),
-  /* path to favicon.ico (build/favicon.ico) */
+  /* path to favicon.ico (dist/favicon.ico) */
   faviconPath: resolve(`${currentDirectory}/public/favicon.ico`),
-  /* analyzed client assets (next/analyze/client.html) */
+  /* analyzed client assets (dist/analyze/client.html) */
   analyzePath: "analyze/client.html",
-  /* compiled fonts build path (build/assets) */
+  /* compiled fonts build path (dist/static/assets) */
   fontsFolder: "static/assets",
-  /* compiled CSS build path (build/css) */
+  /* compiled CSS build path (dist/static/css) */
   cssFolder: "static/css/bundle.min.css",
-  /* compiled JS build path (build/js) */
+  /* compiled JS build path (dist/static/js) */
   jsFolder: "static/js/bundle.min.js",
 };

@@ -3,9 +3,14 @@ const { ANALYZE, NODE_ENV, PORT } = process.env;
 const inDevelopment = NODE_ENV === "development";
 
 module.exports = {
-  ANALYZE /*  boolean to use bundle analyzer */,
-  currentDirectory: process.cwd() /* current working directory */,
-  inDevelopment /* in development environment */,
-  NODE_ENV /* current environment */,
-  PORT /* application's current port */,
+  /*  boolean to use bundle analyzer */
+  ANALYZE,
+  /* current working directory */
+  currentDirectory: process.cwd(),
+  /* in development environment */
+  inDevelopment,
+  /* current environment */
+  NODE_ENV,
+  /* application's current port */
+  PORT,
 };
