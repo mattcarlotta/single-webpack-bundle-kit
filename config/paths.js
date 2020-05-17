@@ -25,5 +25,5 @@ module.exports = {
   /* compiled CSS build path (build/css) */
   cssFolder: "static/css/bundle.min.css",
   /* compiled JS build path (build/js) */
-  jsFolder: "static/js/bundle-min.js",
+  jsFolder: "static/js/bundle.min.js",
 };
