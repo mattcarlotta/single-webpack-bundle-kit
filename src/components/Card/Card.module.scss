@@ -1,0 +1,15 @@
+@import "../../styles/variables/vars";
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.description {
+  text-align: left;
+}
+
+.title {
+  color: $blue;
+}
